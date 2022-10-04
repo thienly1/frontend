@@ -1,0 +1,146 @@
+.container1 {  display: grid;
+  width: 1024px;
+  margin: 0px 50px 0px 50px;
+  background-color: gray;
+  text-align: center;
+
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr 1.2fr 1.2fr;
+  grid-template-rows: 0.5fr 0.5fr 1fr 1.5fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Logo Menu Menu Menu empty Login"
+    "section section section section aside aside"
+    "Sub-text Sub-text Sub-text Sub-text aside aside"
+    "article-1 article-1 article-2 article-2 aside aside"
+    "footer footer footer footer footer footer";
+}
+
+.footer { grid-area: footer; 
+  background-color: lightblue;
+  text-align: center;
+}
+
+.section { grid-area: section;
+
+background-color: aqua;
+}
+
+.Sub-text { grid-area: Sub-text;
+  background-color: aqua;
+ }
+
+.aside { grid-area: aside; 
+  background-color: darkgoldenrod;
+}
+
+.article-1 { grid-area: article-1;
+  background-color: aqua; }
+
+.Logo { grid-area: Logo;
+background-color: azure; }
+
+.Menu { grid-area: Menu; 
+background-color: lightgrey;
+}
+.Menu ul li{
+  list-style-type: none;
+  margin: 0;
+  padding: 16px;
+  float: left;
+  
+}
+.Menu ul li a{
+  text-decoration: none;
+}
+
+.Login { grid-area: Login; 
+  background-color: bisque;
+}
+
+.empty { grid-area: empty;
+
+  background-color: azure;
+ }
+
+.article-2 { grid-area: article-2; 
+  background-color: aqua;
+}
+
+
+.container2 {  display: grid;
+
+  background-color: bisque;
+  text-align: left;
+  border: 2px solid;
+  width:fit-content;
+  margin: 0px 30px 0px 30px;
+  grid-template-columns: 1fr 2fr 0.5fr 0.5fr;
+  grid-template-rows: 1.2fr 1fr 1fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: column;
+  grid-template-areas:
+    "Logo Menu Empty Index"
+    "Header Header Header Header"
+    "Form Form Form Form"
+    "Footer Footer Footer Footer";
+}
+
+.Logo { grid-area: Logo;
+  background-color: lightblue;
+}
+
+.Menu { grid-area: Menu;
+  background-color: cornflowerblue;
+}
+.Menu ul li a{
+  text-decoration: none;
+  color: darkblue;
+}
+.Menu ul li{
+  list-style-type: none;
+  padding: 20px;
+  margin: 0;
+  float: left;
+  
+}
+
+.Index { grid-area: Index;
+  background-color: lightblue;
+}
+
+.Header { grid-area: Header; 
+  background-color: lightgreen;
+  text-transform: uppercase;
+}
+
+.Form { grid-area: Form;
+  background-color: lightgreen;
+}
+.Form form input{
+  
+}
+#reset {
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+}
+#signin{
+  background-color: green;
+  border-radius: 10px;
+  color: white;
+}
+.Empty{
+  grid-area: Empty;
+  background-color: lightblue;
+
+
+}
+
+.Footer { grid-area: Footer;
+  background-color: lightyellow;
+  text-align: center;
+
+}
+
+
