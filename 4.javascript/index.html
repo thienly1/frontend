@@ -12,9 +12,11 @@
 
     <p>Some content</p>
 
-    <script>
+    <script src="index.js"></script>
 
-        //Access content
+      
+     <!-- <script>
+       //Access content
         document.getElementById("hello")
         //Modifying content
         .innerHTML= "Hello Group 43";
@@ -29,7 +31,20 @@
        // window.alert("Warning");
 
        console.log("Hello in Console");
+    </script> -->
+    
+    <hr>
+    <div id="firstName"></div>
+    <button onclick="document.getElementById('firstName').innerHTML='Test' ">Click me to display Name</button>
 
-    </script>
+    <div id="date_time">"TIME DATE"</div>
+    <br>
+    <button onclick="document.getElementById('date_time').innerHTML= Date()">Click me to display Date&Time</button>
+    <br>
+    <button onclick="document.getElementById('date_time').style.display='none' ">Click me Hide Date & Time</button>
+    <br>
+    <button onclick="document.getElementById('date_time').style.color= 'red'">Click me to add color</button>
+
+    
 </body>
 </html>
