@@ -1,0 +1,52 @@
+.container {
+
+    width: 1020px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: beige;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "nav nav nav nav nav nav"
+        "menu main main main main advert"
+        "menu main main main main advert"
+        "menu main main main main advert"
+        "footer footer footer footer footer footer";
+}
+
+
+.nav {
+    grid-area: nav;
+    background-color: aquamarine;
+
+}
+
+.footer {
+    grid-area: footer;
+
+    background-color: lightblue;
+}
+
+.menu {
+    grid-area: menu;
+
+    background-color: #fff;
+}
+
+.main {
+    grid-area: main;
+    background-color: blueviolet;
+
+}
+
+.advert {
+    grid-area: advert;
+    background-color: lightpink;
+}

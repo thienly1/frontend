@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<!--ELEMENT or TAG , lang is an attribute with 2 value-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IF=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our First Webpage</title>
+</head>
+
+<body>
+  <h1>växjö</h1>
+  <h2>växjö</h2>
+  <h3>växjö</h3>
+  <h4>växjö</h4>
+  <h5>växjö</h5>
+  <h6>växjö</h6>
+
+  <a href="http://www.google.com">Link to Google.com</a>
+
+
+  <a href="http://www.lexicon.se" target="_blank">Link
+    to Lexicon.se</a>
+
+  <div>
+    <img src="IMG/java_logo_horizontal.png" alt="Picture of A cup of coffee
+          with the word Java under it." width="200px">
+  </div>
+  <p>This is a <b>bold text</b>.</p>
+  <p>This is <strong>strongly important text</strong>.</p>
+  <p>This is <i>italic text</i>.</p>
+  <p>This is <em>emphasized text</em>.</p>
+  <p>This is <mark>highlighted text</mark> .</p>
+  <p>This is <code>computer code</code>.</p>
+  <p>This is <small>smaller text</small>.</p>
+  <p>This is <sub>subscript</sub> and <sup>supercript</sup> text.</p>
+  <p>This is <del>deleted text</del>.</p>
+  <p>This is <ins>inserted text</ins>.</p>
+
+  <ul>
+    <!-- unordered list with list items -->
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+    <li>List Item 4</li>
+
+
+  </ul>
+  <ol>
+    <!-- ordered list with list items -->
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+    <li>List Item 4</li>
+
+  </ol>
+
+  ID Name email
+  1 Ly ly@mail.com
+  2 Mai mai@mail.com
+
+  <table border="1" cellpadding="5">
+    <!--table with border= yes, cellpadding-->
+    <thead>
+      <!--Tabe head-->
+      <tr>
+        <!--Table row-->
+        <td>ID</td>
+        <!--Table data-->
+        <td>NAME</td>
+        <td>EMAIL</td>
+      </tr>
+    </thead>
+    <TBody>
+      <!--Table body-->
+      <tr>
+        <td>1</td>
+        <td>Ly</td>
+        <td>ly@mail.com</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Mai</td>
+        <td>mai@mail.com</td>
+      </tr>
+
+    </TBody>
+  </table>
+
+  <hr> <!-- made the empty space between table and form-->
+  <br> <!-- break - made more empty spaces between table and form-->
+
+  <fieldset>
+    <legend>Register Form</legend>
+
+    <form action="#">
+      <label for="firstname">First Name:</label> <br />
+      <input type="text" , name="firstname" id="firstname">
+      <br />
+
+      <label for="lastname">Last Name:</label> <br />
+      <input type="text" , name="lastname" , id="lastname"> <br />
+
+      <label for="birthdate">Birth Date</label> <br />
+      <input type="date" name="birthdate" id="birthdate"> <br />
+
+      <label for="">password</label> <br />
+      <input type="password" , name="password" id="password"> <br />
+
+
+      <fieldset>
+        <legend>Hobbies</legend>
+
+        <input type="checkbox" name="hobby" value="sports" id="sports">
+        <label for="sport">Sport</label>
+
+        <input type="checkbox" name="hobby" value="music" id="music">
+        <label for="music">Music</label>
+
+        <input type="checkbox" name="hobby" value="reading" id="reading">
+        <label for="reading">Reading</label>
+      </fieldset>
+
+      <FIeldset>
+        <legend>Gender</legend>
+
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">Male</label>
+
+        <input type="radio" name="gender" id="female" value="female">
+        <!--important key is : name, if we change the name, it cant be toggle-->
+        <label for="female">Female</label>
+
+      </FIeldset>
+
+      <button type="submit">Register</button>
+
+    </form>
+
+  </fieldset>
+
+  <!--http://127.0.0.1:5500/2%20basic-component/basic-html-components.html?firstname=THI&lastname=TA&birthdate=2022-09-11&password=123456&hobby=music&hobby=reading&gender=female# -->
+
+
+</body>
+
+</html>

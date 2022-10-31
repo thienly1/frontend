@@ -1,0 +1,12 @@
+
+h1{
+    background-color: aquamarine;
+    padding: 1rem;
+    border: 2px solid black;
+}
+.grid-container{
+    display: grid;
+    
+    grid-template-columns: auto auto auto; /*200px 200px 200px*/
+    column-gap: 20px;
+}
