@@ -5,33 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+
+    function myFunction(){
+        document.getElementById("demo in head").innerHTML= 'Paragraph changed';
+    }
+    </script>
 </head>
 <body>
+    
+    <!-- invoke function from <head></head> section -->
+    <p id="demo in head">A Paragraph</p>
+    <button onclick="myFunction()">Try it</button>
+    <br>
+
+    <!-- invoke function from <body></body> section -->
+    <p id="demo in body">Demo JavaScript in Body</p>
+    <button onclick="myFunctionBody()">Try it in body</button>
+    <!-- place scripts at the bottom of the <body> element improves the display speed, because the script interpretation slows down the display -->
+    <script>
+        function myFunctionBody(){
+            document.getElementById('demo in body').innerHTML='Changed from the body of JavaScript';
+        }
+    </script>
+
     
     <h1 id="hello">Hello Group ##</h1>
 
     <p>Some content</p>
 
-    <script src="index.js"></script>
-
-      
-     <!-- <script>
-       //Access content
-        document.getElementById("hello")
-        //Modifying content
-        .innerHTML= "Hello Group 43";
-
-        document.getElementById("hello").style.fontSize= "30px";
-        document.getElementById("hello").style.color="red";
-
-        //Write
-        document.write("Hello Again!");
-
-        //Alert: popup
-       // window.alert("Warning");
-
-       console.log("Hello in Console");
-    </script> -->
+<!-- external script can place in <head> or<body> elements as you like and external scripts cannot contain <script> tag -->
+    <script src="index.js"></script> 
+    <!-- can use a full URL to link to myScipt.js ( a js file in a URL) -->
+    <!-- <script src="http://w3schools.com/js/myScript.js"></script> -->
     
     <hr>
     <div id="firstName"></div>
@@ -45,6 +51,21 @@
     <br>
     <button onclick="document.getElementById('date_time').style.color= 'red'">Click me to add color</button>
 
+    <!-- change HTML Attribute values -->
+    <br>
+    <button onclick="document.getElementById('bulb').src='bulbon.jpg' ">Turn on the light</button>
+    <img id="bulb" src="bulboff.jpg" style="width:100px">
+    <button onclick="document.getElementById('bulb').src='bulboff.jpg' ">Turn off the light</button>
+
+    <!-- Hide HTML Element  -->
+    <p id="hide">content</p>
+    <button onclick="document.getElementById('hide').style.display= 'none' ">Click me</button>
+    <br>
+
+    <!-- Show HTML Element  -->
+    <p id="show" style="display: none"> Hello JavaScript</p>
+    <button onclick="document.getElementById('show').style.display='block'">Click me to show hidden HTML element </button>
+   
     
 </body>
 </html>
