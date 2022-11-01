@@ -37,19 +37,22 @@
 //JavScript function
 //Syntax function functionName(){}
 
-function display(){
-    console.log("display function has been triggered")
+// Operators in JS
+
+var n1 =100;
+var n2= "100";
+console.log(n1==n2) //true : compares content/value
+console.log(n1===n2) //false : compares content of variable + type
+
+//If Statement
+if(n1===n2){
+    console.log("Numbers are same")
+}else{
+    console.log("Numbers are not same")
 }
 
-function subtraction(num1,num2){
-    return num1-num2;
-}
+//Ternary Operator -> condition?expression_1 :expression 2
 
-display(); //Calling function
+var resultOfOperator = (n1===n2) ?"Numbers are same": "Numbers are not same";
 
-var subtractionResult = subtraction(10,1);
-console.log(subtractionResult);
-
-
-
-
+console.log(resultOfOperator);
