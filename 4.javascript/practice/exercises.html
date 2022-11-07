@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Ex1- JavaScript Clock -->
+        <h4>1. Updating text with JavaScript</h4>
+        <p id="ex1"></p>
+        <script>
+            setInterval(updateDateTime, 1000)
+            function updateDateTime() {
+                const d = new Date();
+                document.getElementById('ex1').innerHTML = d;
+            }
+        </script>
+
+        <h4>2. Reading inputs through JavaScript</h4>
+        <p id="ex2"></p>
+        <input id="ex2c" type="number" value="2000">
+        <button onclick="myEx2()">Click here to check if the year is leap year?</button>
+        <script>
+            function myEx2() {
+                const d = document.getElementById('ex2c').value;
+                if ((d % 100 == 0 && d % 400 == 0) || (d % 100 != 0 && d % 4 == 0)) {
+                    document.getElementById('ex2').innerHTML = d + " is leap year";
+                    document.getElementById('ex2').style.color = "green"
+                } else {
+                    document.getElementById('ex2').innerHTML = d + " is not leap year";
+                    document.getElementById('ex2').style.color = "red"
+                }
+            }
+        </script>
+
+        <h4>3. 1st of January = Sunday?</h4>
+        <p id="ex3"></p>
+        <input id="ex3c" type="number" value="2000">
+        <button onclick="myEx3()">Click here to check whether January 1st is sunday?</button>
+        <script>
+            function myEx3() {
+                const d2 = new Date(document.getElementById('ex3c').value, 0, 1);
+                if (d2.getDay() === 6) {
+                    document.getElementById('ex3').innerHTML = "January 1st, " + document.getElementById('ex3c').value + " is sunday";
+                } else {
+                    document.getElementById('ex3').innerHTML = "January 1st, " + document.getElementById('ex3c').value + " is not sunday";
+                }
+            }
+        </script>
+
+        <h4>4. Guessing game</h4>
+        <p id="ex4"></p>
+        <input id="ex4c" type="number" placeholder="enter from 1 to 100" min="1" max="100" width="100%">
+
+        <button onclick="myEx4()">Click here to see the result</button>
+        <script>
+            function myEx4() {
+                const input = document.getElementById('ex4c').value;
+                if (input == randomN(1, 100)) {
+                    document.getElementById('ex4').innerHTML = "Good Job";
+                } else {
+                    document.getElementById('ex4').innerHTML = "Did not match";
+                }
+            }
+            function randomN(min, max) {
+                return Math.floor(Math.random() * max) + min;
+            }
+        </script>
+
+        <h4>5. Days until Christmas</h4>
+
+        <p id="ex5"></p>
+
+        <script>
+            setInterval(daysUntilC(), 86400000)
+            function daysUntilC() {
+                const daysUn = new Date();
+                const Christmas = new Date(daysUn.getFullYear(), 10, 25);
+                let remaindays = 0;
+                let rounded = 0;
+
+                if (daysUn.getTime() <= Christmas.getTime()) {
+                    remaindays = (Christmas.getTime() - daysUn.getTime()) / 86400000;
+                    document.getElementById('ex5').innerHTML = "Number of days until Christmas are: " + Math.round(remaindays);
+                } else {
+                    const nextChristmas = new Date(daysUn.getFullYear() + 1, 10, 25);
+                    remaindays = (nextChristmas.getTime() - daysUn.getTime()) / 86400000;
+                    document.getElementById('ex5').innerHTML = "Number of days until Christmas are: " + Math.round(remaindays);
+                }
+            }
+        </script>
+
+        <h4>6. Reverse Input</h4>
+        <p id="ex6"></p>
+        <input id="ex6c" type="text" placeholder="enter a text or number">
+        <button onclick="myEx6()">Click here to reverse input</button>
+        <script>
+            function myEx6() {
+                const output = document.getElementById('ex6c').value.split('').reverse().join('');
+                document.getElementById('ex6').innerHTML = "Reversed Input is: " + output;
+            }
+        </script>
+
+        <h4>7. Text manipulation</h4>
+
+        <input id="ex7c" type="text" placeholder="enter a word">
+        <button onclick="myEx7()">Click here</button>
+        <p id="ex7"></p>
+        <script>
+            function myEx7() {
+                let text7c = document.getElementById('ex7c').value;
+                let text7 = document.getElementById('ex7');
+                text7.innerHTML = "";
+                for (let i = 0; i < text7c.length; i++) {
+                    for (let j = 0; j < text7c.length; j++) {
+
+                        if (i == j) {
+                            text7.innerHTML += text7c.charAt(i) + ", "
+                        } else {
+                            text7.innerHTML += text7c.charAt(i) + text7c.charAt(j) + ", "
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <h4>8. Text manipulation 2</h4>
+        <input id="ex8c" type="text" placeholder="enter a word">
+        <button onclick="myEx8()">Click here</button>
+        <p id="ex8"></p>
+        <script>
+            function myEx8() {
+                const text8 = document.getElementById('ex8c').value.split('').sort().join('');
+                document.getElementById('ex8').innerHTML = "The order of lettes in input are: " + text8;
+            }
+        </script>
+
+        <h4>9. Text manipulation 3</h4>
+        <input id="ex9c" type="text" placeholder="enter a sentence">
+        <button onclick="myEx9()">Click here</button>
+        <p id="ex9"></p>
+        <p id="ex9.2"></p>
+        <script>
+            function myEx9() {
+                const array9 = document.getElementById('ex9c').value.split(" ");
+                const arrayResult = [];
+                for (let i = 0; i < array9.length; i++) {
+                    arrayResult.push(array9[i].replace(array9[i].charAt(0), array9[i].charAt(0).toUpperCase()));
+                }
+                let result = arrayResult.join(' ');
+                document.getElementById('ex9').innerHTML = result;
+                let max = 0;
+                for (let j = 0; j < arrayResult.length; j++) {
+                    if (arrayResult[j].length > max) {
+                        max = arrayResult[j].length;
+                    }
+                }
+
+                const maxlengthArr = [];
+                for (let k = 0; k < arrayResult.length; k++) {
+                    if (arrayResult[k].length == max) {
+                        maxlengthArr.push(arrayResult[k]);
+                    }
+                }
+                document.getElementById('ex9.2').innerHTML = "The longest words are: " + maxlengthArr;
+
+            }
+        </script>
+
+        <h4>10. Prime number</h4>
+        <input id="ex10c" type="number" placeholder="enter an integer">
+        <button onclick="myEx10()">Click here</button>
+        <p id="ex10"></p>
+        <script>
+            function myEx10() {
+                let inputN = document.getElementById('ex10c').value;
+                let result = document.getElementById('ex10');
+                result.innerHTML = "";
+                let isPrime = true;
+
+                if (inputN === 1) {
+                    result.innerHTML += " 1 is either prime number or not";
+                } else if (inputN > 1) {
+                    for (let n = 2; n < inputN; n++) {
+                        if (inputN % n == 0) {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                    if (isPrime) {
+                        result.innerHTML += inputN + " is a prime number";
+                    } else {
+                        result.innerHTML += inputN + " is not a prime number";
+                    }
+                } else {
+                    result.innerHTML += inputN + " is not a prime number";
+                }
+
+            }
+
+        </script>
+
+        <h4>11. Type</h4>
+        <p id="ex11"></p>
+        <input id="exc11">
+        <button onclick=myEx11()>Try it</button>
+    
+        <script>str
+            function myEx11() 
+            {
+                let a = document.getElementById("exc11").type;
+                document.getElementById('ex11').innerHTML= a;
+            }
+        </script>
+
+        <h4>12. If loop statement</h4>
+        <p id="ex12"></p>
+        <button onclick="myEx12()">Click here</button>
+        <script>
+            function myEx12() {
+                let output12 = "";
+                for (let x = 0; x < 16; x++) {
+                    if (x % 2 == 0) {
+                        output12 += x + " is even" + "<br>";
+                    } else {
+                        output12 += x + " is odd" + "<br>";
+                    }
+                }
+                document.getElementById('ex12').innerHTML = output12;
+            }
+        </script>
+
+        <h4>13. If loop statement</h4>
+        <p id="ex13"></p>
+
+
+        <h4>14. Array</h4>
+        <p id="ex14"></p>
+        <button onclick="myEx14()">Try it</button>
+        <script>
+            function myEx14() {
+                const workDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+                let output14 = "";
+                for (let i = 0; i < workDays.length; i++) {
+                    if (i < workDays.length - 2) {
+                        output14 += workDays[i] + ", ";
+                    } else if (i == workDays.length - 2) {
+                        output14 += workDays[i] + " and ";
+                    } else {
+                        output14 += workDays[i];
+                    }
+                }
+                document.getElementById('ex14').innerHTML = output14 + " are workdays.";
+            }
+        </script>
+
+        <h4>15. Array2</h4>
+        <p id="ex15"></p>
+        <button onclick="myEx15()">Try it</button>
+        <script>
+            function myEx15() {
+                const numbers = [4, 1, 9, -2, 5];
+                document.getElementById('ex15').innerHTML = numbers.sort((a, b) => (a - b));
+            }
+        </script>
+
+        <h4>16. Array3</h4>
+        <p id="ex16"></p>
+        <button onclick="myEx16()">Try it</button>
+        <script>
+            function myEx16() {
+                const duplicatedNumbers = [4, 1, 9, -2, 5, 9, 1, 6, 1, 5];
+                const found = [];
+                for (let i = 0; i < duplicatedNumbers.length; i++) {
+                    for (let j = 0; j < duplicatedNumbers.length; j++) {
+                        if (j > i && duplicatedNumbers[i] === duplicatedNumbers[j]) {
+                            if (!found.includes(j)) {
+                                found.push(j);
+                            }
+                        }
+                    }
+                }
+                found.sort((a, b) => (a - b));
+
+                for (let k = found.length - 1; k >= 0; k--) {
+                    duplicatedNumbers.splice(found[k], 1);
+                }
+                document.getElementById('ex16').innerHTML = duplicatedNumbers;
+
+            }
+        </script>
+
+        <h4>17. Array4</h4>
+        <p id="ex17"></p>
+        <input id="ex17c">
+        <button onclick="myEx17()">Try it</button>
+        <script>
+            const arr = [];
+            function myEx17() {
+                let var1 = document.getElementById('ex17c').value;
+                if (var1 != 0 && var1 != "null") {
+                    arr.push(var1);
+                }
+                document.getElementById('ex17').innerHTML = arr;
+            }
+        </script>
+
+        <h4>18. Number of days in a month</h4>
+        <p id="ex18"></p>
+
+        <input type="number" id="month" min="1" max="12">
+        <input type="number" id="year" value="2000">
+        <button onclick="myEx18()">Click me</button>
+        <script>
+            let year = 0;
+            function myEx18() {
+                let month = document.getElementById('month').value;
+                year = document.getElementById('year').value;
+                if (leapYear(year)) {
+                    if (month == 2) {
+                        document.getElementById('ex18').innerHTML = "the number of days are 29";
+                    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                        document.getElementById('ex18').innerHTML = "the number of days are 30";
+                    } else {
+                        document.getElementById('ex18').innerHTML = "the number of days are 31";
+                    }
+                } else {
+                    if (month == 2) {
+                        document.getElementById('ex18').innerHTML = "the number of days are 28";
+                    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                        document.getElementById('ex18').innerHTML = "the number of days are 30";
+                    } else {
+                        document.getElementById('ex18').innerHTML = "the number of days are 31";
+                    }
+                }
+            }
+
+            function leapYear(d) {
+                if ((d % 100 == 0 && d % 400 == 0) || (d % 100 != 0 && d % 4 == 0)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+
+        <h4>19. Time Convertion</h4>
+        <p id="ex19"></p>
+        <input type="number" id="exc19">
+        <button onclick="myEx19()"> Click me</button>
+        <script>
+            function myEx19(){
+                let minutes = document.getElementById('exc19').value;
+                let remainers = minutes%60;
+                let hours = (minutes-remainers)/60;
+                document.getElementById('ex19').innerHTML= minutes + " minutes = " + hours + " hour(s) and " + remainers + " minutes";
+            }
+        </script>
+
+        <h4>20. Get the age</h4>
+        <p id="ex20"></p>
+        <input type="number" id="exc20">
+        <button onclick="myEx20()">Click me</button>
+        <script>
+            function myEx20(){
+                let yearCount= document.getElementById('exc20').valueAsNumber;
+                let currentY = new Date();
+                let ages = currentY.getFullYear()-yearCount;
+                document.getElementById('ex20').innerHTML= "your ages is " + ages;
+            }
+        </script>
+
+
+    </div>
+</body>
+
+</html>
