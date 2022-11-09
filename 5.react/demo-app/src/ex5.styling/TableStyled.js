@@ -42,16 +42,16 @@ const TableAction =() =>{
     return (
         <>
         {/*class styling */}
-        <button>Details</button>
-        <button>Delete</button>
-        <button>Edit</button>
+        <button className='btn btn-primary'>Details</button>
+        <button className='btn btn-danger'>Delete</button>
+        <button className='btn btn-warning'>Edit</button>
     </>
     );
 }
 const Table = () => {
     return (
         <div>
-            <table 
+            <table className='table table-dark table-striped'
             border="1">
                 <TableHeader/>
                 <TableBody/>

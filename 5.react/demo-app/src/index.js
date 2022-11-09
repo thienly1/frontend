@@ -10,6 +10,7 @@ import NameList from './ex6.variables-functions/NameList';
 import NameListProps from './ex7.props/NameListProps';
 import MenuList from './ex7.props/MenuList';
 import Cars from './ex8.state/Cars';
+import TableStyled from './ex5.styling/TableStyled';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const welcomeMessage = React.createElement("h1", null, "Hello Group 43");
@@ -22,7 +23,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<AFMain/>)
 
 //root.render(<Table/>)
-root.render(<StylingExample/>)
+//root.render(<StylingExample/>)
+root.render(<TableStyled/>)
+
 // const listOfNames= ["Ly Ta", "Mai Ta"]
 // root.render(<NameListProps names={listOfNames}/>)
 
