@@ -25,9 +25,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<Table/>)
 //root.render(<StylingExample/>)
 //root.render(<TableStyled/>)
-root.render(<NameList/>)
-// const listOfNames= ["Ly Ta", "Mai Ta"]
-// root.render(<NameListProps names={listOfNames}/>)
+//root.render(<NameList/>)
+//  const listOfNames= ["Ly Ta", "Mai Ta"]
+//  root.render(<NameListProps namesList={listOfNames}/>)
 
 const links= [
   {id: 1, name: "lexicon", url:"https://www.lexicon.se"},
