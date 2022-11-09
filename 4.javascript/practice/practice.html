@@ -28,6 +28,7 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>BirthDate</th>
+                        <th>Action</th>
                     </thead>
                     <tbody id="personTableBody"></tbody>
                 </table>
@@ -51,13 +52,16 @@
                         
                             <script>
                                 const persons = [];
-                                function addPerson(){
-                                    
+
+                                function randomId(min, max){
+                                    return Math.floor(Math.random() * (max-min) + 1) + min;
+                                }
+                                function addPerson(){        
                                     let nameP = document.getElementById("name").value;
-                                    let birthDateP= new Date(document.getElementById("birthDate").value);
-                                    //create a random value for id property
-                                    let idP= Math.floor(Math.random() * 100) + 1;
-                                    //implement add person function
+                                 //   let birthDateP= new Date(document.getElementById("birthDate").value); 
+                                 // we can treat birthDate as string type
+                                    let birthDateP= document.getElementById("birthDate").value;                                  
+                                    let idP= randomId(1,100);                                
                                     let person = {
                                         id: idP,
                                         name: nameP,
@@ -72,20 +76,28 @@
                                     //find the person by id from the list then remove it
                                     const found = persons.findIndex(person=>person.id===id);
                                     persons.splice(found,1);
+                                    displayData();
                                 }
 
                                 function displayData(){
                                     const tableRows = persons.map(person => {
                                         //implement a string template for creating the table rows using <tr> and <td> with person property
                                         const row = 
-                                        `<tr id="${person.id}">
+                                        // `<tr id="${person.id}">
+                                        //         <td>${person.id}</td>
+                                        //         <td>${person.name}</td>
+                                        //         <td>${person.birthDate.toLocaleDateString()}</td> 
+                                        //         <td><button class="btn btn-danger" onclick="deletePerson(${person.id})">Delete</button></td>
+                                        //     </tr>`;
+
+                                            `<tr id="${person.id}">
                                                 <td>${person.id}</td>
                                                 <td>${person.name}</td>
-                                                <td>${person.birthDate.toLocaleDateString()}</td>
-                                            </tr>`;
+                                                <td>${person.birthDate}</td> 
+                                                <td><button class="btn btn-danger" onclick="deletePerson(${person.id})">Delete</button></td>
+                                            </tr>`;                                           
                                         return row;
                                     });
-
                                     const table= document.getElementById('dataTable');
                                     const tbody = document.getElementById('personTableBody');
 
