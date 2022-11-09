@@ -24,8 +24,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //root.render(<Table/>)
 //root.render(<StylingExample/>)
-root.render(<TableStyled/>)
-
+//root.render(<TableStyled/>)
+root.render(<NameList/>)
 // const listOfNames= ["Ly Ta", "Mai Ta"]
 // root.render(<NameListProps names={listOfNames}/>)
 
