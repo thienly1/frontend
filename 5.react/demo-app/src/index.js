@@ -12,6 +12,7 @@ import MenuList from './ex7.props/MenuList';
 import Cars from './ex8.state/Cars';
 import TableStyled from './ex5.styling/TableStyled';
 import Product from './ex8.state/Product';
+import Counter from './ex9.event/Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const welcomeMessage = React.createElement("h1", null, "Hello Group 43");
@@ -39,6 +40,7 @@ const links= [
 //root.render(<MenuList links={links}/>)
 
 //root.render(<Cars/>)
-root.render(<Product/>)
+//root.render(<Product/>)
+root.render(<Counter/>)
 
 
