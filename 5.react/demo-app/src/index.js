@@ -5,6 +5,7 @@ import Main from './ex2-function-component/Main';
 import AFMain from './ex3.arrow/function/ex3.arrow-function-component/AFMain';
 import Table from './ex4.table/Table';
 import StylingExample from './ex5.styling/StylingExample';
+import "bootstrap/dist/css/bootstrap.css" //must import bootstrap from node_modules with the path like this
 import NameList from './ex6.variables-functions/NameList';
 import NameListProps from './ex7.props/NameListProps';
 import MenuList from './ex7.props/MenuList';

@@ -1,5 +1,5 @@
 import React from 'react';
-import'./table.css';
+// import'./table.css';
 
 
 const TableHeader = () =>{
@@ -42,16 +42,16 @@ const TableAction =() =>{
     return (
         <>
         {/*class styling */}
-        <button className='details-btn'>Details</button>
-        <button className='delete-btn'>Delete</button>
-        <button className='edit-btn'>Edit</button>
+        <button className='btn btn-primary'>Details</button>
+        <button className='btn btn-danger'>Delete</button>
+        <button className='btn btn-warning'>Edit</button>
     </>
     );
 }
 const Table = () => {
     return (
         <div>
-            <table border="1">
+            <table className='table table-dark table-striped'>
                 <TableHeader/>
                 <TableBody/>
             </table>
