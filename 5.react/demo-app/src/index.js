@@ -13,6 +13,7 @@ import Cars from './ex8.state/Cars';
 import TableStyled from './ex5.styling/TableStyled';
 import Product from './ex8.state/Product';
 import Counter from './ex9.event/Counter';
+import Person from './ex9.event/Person';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const welcomeMessage = React.createElement("h1", null, "Hello Group 43");
@@ -41,6 +42,7 @@ const links= [
 
 //root.render(<Cars/>)
 //root.render(<Product/>)
-root.render(<Counter/>)
+//root.render(<Counter/>)
+root.render(<Person/>)
 
 
